@@ -171,6 +171,12 @@ UserRouter.patch("/reset-password", async (req, res) => {
 });
 
 UserRouter.post("/place-order", auth, async (req, res) => {
+  const user = await UserModel.findById(req.userId);
+    
+    if (user.type !== 'buyer') {
+        return res.status(403).json({ message: "Only buyers can place orders!" });
+    }
+    
   try {
       const { products } = req.body; 
 
