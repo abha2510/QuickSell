@@ -6,7 +6,7 @@ const JWT_SECRET = process.env.JWT_SECRET;
 
 async function auth(req, res, next) {
   const authHeader = req.headers["authorization"];
-  const token = authHeader;
+  const token = authHeader && authHeader.split(' ')[1];
 
   if (!token) {
     console.log("Token not provided in the request.");
