@@ -5,6 +5,7 @@ const { UserRouter } = require("./router/User.Router");
 const cors = require("cors");
 const { ProductRouter } = require("./router/Product.Router");
 const { AdminRouter } = require("./router/Admin.Router");
+const { recipeRouter } = require("./router/Recipe.Router");
 
 const app = express();
 app.use(express.json());
@@ -18,6 +19,8 @@ app.use("/users", UserRouter);
 app.use("/products",ProductRouter);
 app.use("/orders",UserRouter);
 app.use("/admin",AdminRouter);
+app.use("/recipe",recipeRouter)
+
 
 app.listen(process.env.port, async () => {
   try {
