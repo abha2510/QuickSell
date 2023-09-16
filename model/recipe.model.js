@@ -2,18 +2,19 @@ const mongoose = require('mongoose');
 
 const recipeSchema = new mongoose.Schema({
     title: String,
-    ingredients: String,
-    instruction:String,
+    extendedIngredients: Array,
+    instructions:String,
     readyInMinutes: Number, 
     servings: Number,
-    mask: String,
-    backgroundImage:String,
+    cuisines: Array,
+    diets:Array,
     image:String,
-    imageUrl:String,
+    dishTypes:Array,
     author:String,
-    backgroundColor:String,
+    summary:String,
     fontColor:String,
-    source:String
+    source:String,
+    occasions:Array
 
 });
 
