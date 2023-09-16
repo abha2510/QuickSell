@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const recipeSchema = new mongoose.Schema({
+    userId: String,
     title: String,
     extendedIngredients: Array,
     instructions:String,
